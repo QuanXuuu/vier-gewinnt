@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border box;
+  box-sizing: border-box;
 }
 
 :root {
@@ -15,39 +15,52 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 45px;
+  font-size: 65px;
+  margin: 20px 0;
 }
 
 button {
   padding: 10px 20px;
-  margin-top: 10px;
   border-radius: 10px;
   background-color: var(--orange);
   color: #333;
   border-color: var(--orange);
   font-size: 18px;
   transition: 200ms transform;
-  font-weight: 600;
+  font-weight: 700;
+  display: flex;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
 }
 
-.container {
-  padding: 10px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+button:hover {
+  cursor: pointer;
 }
 
 #gameboard {
   width: 700px;
+  height: 580px;
   margin-top: 20px;
-  height: 550px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2e8b57;
+  background-color: #0000ff;
   border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+}
+
+#column1 {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid yellow;
+  width: 96px;
+}
+
+#column2 {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
 }
 
 #gameboard > .column > .circle {
@@ -58,10 +71,10 @@ button {
   margin: 8px;
 }
 
-#gameboard > .column > .circleRed {
+/*#gameboard > .column > .circleRed {
   background-color: #ff0000;
 }
 
 #gameboard > .column > .circleYellow {
   background-color: #f1c40f;
-}
+}*/
