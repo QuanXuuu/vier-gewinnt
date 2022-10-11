@@ -17,6 +17,6 @@ console.log(grid);
 
 //grid[1][0].innerHTML = "red";
 
-function setCircle(e) {
+function setCircle() {
   console.log("test");
 }
