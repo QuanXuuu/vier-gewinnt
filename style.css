@@ -40,7 +40,7 @@ button:hover {
 }
 
 #gameboard {
-  width: 700px;
+  width: 680px;
   height: 580px;
   margin-top: 20px;
   background-color: #0000ff;
@@ -54,7 +54,6 @@ button:hover {
 #gameboard > .column {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
   width: 96px;
 }
 
