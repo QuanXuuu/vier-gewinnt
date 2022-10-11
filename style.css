@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border box;
+}
+
+:root {
+  --orange: #f2c14e;
+  background-color: #d4efdf;
+}
+
+body {
+  font-family: "Silkscreen", cursive;
+}
+
+h1 {
+  text-align: center;
+  font-size: 45px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: var(--orange);
+  color: #333;
+  border-color: var(--orange);
+  font-size: 18px;
+  transition: 200ms transform;
+  font-weight: 600;
+}
+
+.container {
+  padding: 10px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#gameboard {
+  width: 700px;
+  margin-top: 20px;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2e8b57;
+  border-radius: 10px;
+}
+
+#gameboard > .column > .circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 8px;
+}
+
+#gameboard > .column > .circleRed {
+  background-color: #ff0000;
+}
+
+#gameboard > .column > .circleYellow {
+  background-color: #f1c40f;
+}
