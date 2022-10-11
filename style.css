@@ -13,13 +13,19 @@ body {
   font-family: "Silkscreen", cursive;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 h1 {
-  text-align: center;
   font-size: 65px;
   margin: 20px 0;
 }
 
-button {
+.container > button {
   padding: 10px 20px;
   border-radius: 10px;
   background-color: var(--orange);
@@ -28,36 +34,44 @@ button {
   font-size: 18px;
   transition: 200ms transform;
   font-weight: 700;
-  display: flex;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 40px;
 }
 
-button:hover {
+.container > button:hover {
   cursor: pointer;
 }
 
 #gameboard {
   width: 680px;
-  height: 580px;
+  height: 565px;
   margin-top: 20px;
   background-color: #0000ff;
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  //z-index: 2;
+  z-index: 2;
   display: flex;
 }
 
-#gameboard > .column {
+#gameboard > .column-container {
   display: flex;
   flex-direction: column;
   width: 96px;
 }
 
-#gameboard > .column > .circle {
+#gameboard > .column-container > button {
+  background-color: var(--orange);
+  padding: 5px 8px;
+  margin: 0 5px 5px 5px;
+  color: #333;
+  border-color: var(--orange);
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#gameboard > .column-container > button:hover {
+  cursor: pointer;
+}
+
+#gameboard > .column-container > .column > .circle {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -65,10 +79,10 @@ button:hover {
   margin: 8px;
 }
 
-/*#gameboard > .column > .circleRed {
+#gameboard > .column > .circleRed {
   background-color: #ff0000;
 }
 
 #gameboard > .column > .circleYellow {
   background-color: #f1c40f;
-}*/
+}
