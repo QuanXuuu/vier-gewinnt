@@ -42,8 +42,8 @@ h1 {
 }
 
 #gameboard {
-  width: 680px;
-  height: 565px;
+  width: 670px;
+  height: 570px;
   margin-top: 20px;
   background-color: #0000ff;
   border-radius: 10px;
@@ -80,9 +80,9 @@ h1 {
 }
 
 #gameboard > .column > .circleRed {
-  background-color: #ff0000;
+  background-color: #dc143c;
 }
 
 #gameboard > .column > .circleYellow {
-  background-color: #f1c40f;
+  background-color: #ffd700;
 }
