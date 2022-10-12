@@ -5,18 +5,30 @@ let playBtn = document.getElementsByClassName("playBtn");
 
 const grid = [];
 
+const bottomLine = [5, 5, 5, 5, 5, 5, 5];
+
 for (const column of Array.from(document.getElementsByClassName("column"))) {
   grid.push(Array.from(column.children));
 }
 
-console.log(grid[1][0]);
+function handleClick(column) {
+  //Toggle player in Paragraph Element
+  //Put chips
 
-function handleClick() {
   let Player = document.getElementById("player");
+
+  const circleIndexArray = [column, bottomLine[column]];
+  const currentCircle = grid[column][bottomLine[column]];
 
   if (Player.innerText === "red") {
     Player.innerText = "yellow";
+    Player.style.color = "orange";
+    currentCircle.classList.add("circleRed");
   } else {
     Player.innerText = "red";
+    Player.style.color = "red";
+    currentCircle.classList.add("circleYellow");
   }
+
+  bottomLine[column] = bottomLine[column] - 1;
 }
