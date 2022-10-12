@@ -4,7 +4,6 @@ let gameBoard = document.getElementById("gameboard");
 let playBtn = document.getElementsByClassName("playBtn");
 
 const grid = [];
-
 const bottomLine = [5, 5, 5, 5, 5, 5, 5];
 
 for (const column of Array.from(document.getElementsByClassName("column"))) {
@@ -17,7 +16,6 @@ function handleClick(column) {
 
   let Player = document.getElementById("player");
 
-  const circleIndexArray = [column, bottomLine[column]];
   const currentCircle = grid[column][bottomLine[column]];
 
   if (Player.innerText === "red") {
@@ -30,5 +28,12 @@ function handleClick(column) {
     currentCircle.classList.add("circleYellow");
   }
 
+  checkWinner();
   bottomLine[column] = bottomLine[column] - 1;
+}
+
+function checkWinner() {
+  console.log("test");
+
+  //window.alert("You are the Winner!!!");
 }
