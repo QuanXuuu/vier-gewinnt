@@ -3,20 +3,20 @@ let restartBtn = document.getElementById("restartBtn");
 let gameBoard = document.getElementById("gameboard");
 let playBtn = document.getElementsByClassName("playBtn");
 
-const playerRed = "R";
-const playerYellow = "Y";
-let currentPlayer = playerRed;
-
 const grid = [];
 
 for (const column of Array.from(document.getElementsByClassName("column"))) {
   grid.push(Array.from(column.children));
 }
 
-console.log(grid);
+console.log(grid[1][0]);
 
-//grid[1][0].innerHTML = "red";
+function handleClick() {
+  let Player = document.getElementById("player");
 
-function setCircle() {
-  console.log("test");
+  if (Player.innerText === "red") {
+    Player.innerText = "yellow";
+  } else {
+    Player.innerText = "red";
+  }
 }
