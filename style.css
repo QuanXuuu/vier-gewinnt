@@ -6,7 +6,6 @@
 
 :root {
   --orange: #f2c14e;
-  background-color: #d4efdf;
 }
 
 body {
@@ -80,10 +79,10 @@ h1 {
   margin: 8px;
 }
 
-#gameboard > .column > .circleRed {
+#gameboard > .column-container > .column > .circleRed {
   background-color: #dc143c;
 }
 
-#gameboard > .column > .circleYellow {
+#gameboard > .column-container > .column > .circleYellow {
   background-color: #ffd700;
 }
