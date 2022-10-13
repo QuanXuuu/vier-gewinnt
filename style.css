@@ -27,8 +27,6 @@ h1 {
 
 .winnerText {
   display: none;
-  color: red;
-  margin-top: 20px;
 }
 
 .container > button {
