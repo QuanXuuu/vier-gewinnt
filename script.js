@@ -26,12 +26,11 @@ function handleClick(column) {
   }
 
   checkWinner(currentCircle, column);
-
   bottomLine[column] = bottomLine[column] - 1;
 }
 
 function checkWinner(currentCircle, column) {
-  const winnerArray = [currentCircle];
+  let winnerArray = [currentCircle];
 
   // Check horizontally
   let leftCircle;
@@ -62,5 +61,25 @@ function checkWinner(currentCircle, column) {
     alert("Congratulations! You are the winner !!!");
   }
 
-  // Check below currentCircle
+  // Check vertically
+  winnerArray = [];
+  winnerArray.push(currentCircle);
+
+  let belowCircle;
+
+  if (bottomLine[column] <= 2) {
+    for (let b = bottomLine[column]; b < 5; b++) {
+      belowCircle = grid[column][b + 1];
+
+      if (belowCircle.className == currentCircle.className) {
+        winnerArray.push(belowCircle);
+      } else {
+        break;
+      }
+    }
+
+    if (winnerArray.length === 4) {
+      alert("Congratulations! You are the winner !!!");
+    }
+  }
 }
