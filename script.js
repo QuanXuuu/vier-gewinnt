@@ -127,11 +127,34 @@ function checkWinner(currentCircle, column) {
         console.log(winnerArray);
       }
     }
-
-    if (winnerArray.length >= 4) {
-      alert("Congratulations! You are the winner !!!");
-    }
+  }
+  if (winnerArray.length >= 4) {
+    alert("Congratulations! You are the winner !!!");
   }
 
   // Check diagonally (NorthWest <--> SouthEast)
+  winnerArray = [];
+  winnerArray.push(currentCircle);
+
+  let northWestCircle;
+  let m;
+  let n = bottomLine[column];
+
+  if (column > 0) {
+    for (let i = column - 1; i >= 0; i--) {
+      m = i;
+      n = n - 1;
+      if (n <= 5 && n >= 0) {
+        northWestCircle = grid[i][n];
+      } else {
+        break;
+      }
+
+      if (northWestCircle.className == currentCircle.className) {
+        winnerArray.push(northWestCircle);
+      } else {
+        break;
+      }
+    }
+  }
 }
