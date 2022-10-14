@@ -87,14 +87,25 @@ function checkWinner(currentCircle, column) {
   winnerArray = [];
   winnerArray.push(currentCircle);
 
-  let SouthWestCircle;
-  for (let i = column - 1; i >= 0; i--) {
-    SouthWestCircle = grid[i][i + 2];
+  let southWestCircle;
+  let x;
+  let y = bottomLine[column];
 
-    if (leftCircle.className == currentCircle.className) {
-      winnerArray.unshift(leftCircle);
-    } else {
-      break;
+  if (bottomLine[column] < 5) {
+    for (let i = column - 1; i > 0; i--) {
+      x = i;
+      y = y + 1;
+      if (y <= 5) {
+        southWestCircle = grid[i][y];
+      } else {
+        break;
+      }
+      if (southWestCircle.className == currentCircle.className) {
+        winnerArray.push(southWestCircle);
+        console.log(winnerArray);
+      } else {
+        break;
+      }
     }
   }
 }
