@@ -124,7 +124,6 @@ function checkWinner(currentCircle, column) {
 
       if (northEastCircle.className == currentCircle.className) {
         winnerArray.push(northEastCircle);
-        console.log(winnerArray);
       }
     }
   }
@@ -156,5 +155,31 @@ function checkWinner(currentCircle, column) {
         break;
       }
     }
+  }
+
+  let southEastCircle;
+  let c;
+  let d = bottomLine[column];
+
+  if (column > 0 && column < 6) {
+    for (let i = column + 1; i >= 0; i++) {
+      c = i;
+      d = d + 1;
+      if (d <= 5 && d >= 0) {
+        southEastCircle = grid[i][d];
+      } else {
+        break;
+      }
+
+      if (southEastCircle.className == currentCircle.className) {
+        winnerArray.push(southEastCircle);
+        console.log(winnerArray);
+      } else {
+        break;
+      }
+    }
+  }
+  if (winnerArray.length >= 4) {
+    alert("Congratulations! You are the winner !!!");
   }
 }
