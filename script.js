@@ -47,8 +47,8 @@ function checkWinner(currentCircle, column) {
 
   let rightCircle;
 
-  for (let e = column + 1; e <= 5; e++) {
-    rightCircle = grid[e][bottomLine[column]];
+  for (let i = column + 1; i <= 5; i++) {
+    rightCircle = grid[i][bottomLine[column]];
 
     if (rightCircle.className == currentCircle.className) {
       winnerArray.push(rightCircle);
@@ -65,14 +65,14 @@ function checkWinner(currentCircle, column) {
   winnerArray = [];
   winnerArray.push(currentCircle);
 
-  let belowCircle;
+  let downCircle;
 
   if (bottomLine[column] <= 2) {
-    for (let b = bottomLine[column]; b < 5; b++) {
-      belowCircle = grid[column][b + 1];
+    for (let i = bottomLine[column]; i < 5; i++) {
+      downCircle = grid[column][i + 1];
 
-      if (belowCircle.className == currentCircle.className) {
-        winnerArray.push(belowCircle);
+      if (downCircle.className == currentCircle.className) {
+        winnerArray.push(downCircle);
       } else {
         break;
       }
@@ -80,6 +80,21 @@ function checkWinner(currentCircle, column) {
 
     if (winnerArray.length === 4) {
       alert("Congratulations! You are the winner !!!");
+    }
+  }
+
+  // Check diagonally (SouthWest <--> NorthEast)
+  winnerArray = [];
+  winnerArray.push(currentCircle);
+
+  let SouthWestCircle;
+  for (let i = column - 1; i >= 0; i--) {
+    SouthWestCircle = grid[i][i + 2];
+
+    if (leftCircle.className == currentCircle.className) {
+      winnerArray.unshift(leftCircle);
+    } else {
+      break;
     }
   }
 }
