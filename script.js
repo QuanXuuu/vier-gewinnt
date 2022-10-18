@@ -4,7 +4,7 @@ let gameBoard = document.getElementById("gameboard");
 let playBtn = document.getElementsByClassName("playBtn");
 
 const grid = [];
-const bottomLine = [5, 5, 5, 5, 5, 5, 5];
+let bottomLine = [5, 5, 5, 5, 5, 5, 5];
 
 for (const column of Array.from(document.getElementsByClassName("column"))) {
   grid.push(Array.from(column.children));
@@ -197,6 +197,5 @@ function handleRestart() {
     circles[i].classList = "circle";
   }
 
-  let currentCircle = grid[column][bottomLine[column]];
-  bottomLine[column] = bottomLine[column];
+  bottomLine = [5, 5, 5, 5, 5, 5, 5];
 }
