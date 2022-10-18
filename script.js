@@ -13,7 +13,7 @@ for (const column of Array.from(document.getElementsByClassName("column"))) {
 //Toggle player in Paragraph Element and put chips
 function handleClick(column) {
   let Player = document.getElementById("player");
-  const currentCircle = grid[column][bottomLine[column]];
+  let currentCircle = grid[column][bottomLine[column]];
 
   if (Player.innerText === "red") {
     Player.innerText = "yellow";
@@ -182,4 +182,21 @@ function checkWinner(currentCircle, column) {
   if (winnerArray.length >= 4) {
     alert("Congratulations! You are the winner !!!");
   }
+}
+
+// Restart function
+function handleRestart() {
+  let Player = document.getElementById("player");
+  let circles = document.getElementsByClassName("circle");
+
+  Player.innerText = "";
+
+  console.log(circles);
+
+  for (let i = 0; i < circles.length; i++) {
+    circles[i].classList = "circle";
+  }
+
+  let currentCircle = grid[column][bottomLine[column]];
+  bottomLine[column] = bottomLine[column];
 }
