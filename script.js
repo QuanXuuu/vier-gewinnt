@@ -191,8 +191,6 @@ function handleRestart() {
 
   Player.innerText = "";
 
-  console.log(circles);
-
   for (let i = 0; i < circles.length; i++) {
     circles[i].classList = "circle";
   }
